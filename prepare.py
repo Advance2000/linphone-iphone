@@ -97,6 +97,7 @@ archs_device = ['arm64', 'armv7']
 archs_simu = ['i386', 'x86_64']
 platforms = ['all', 'devices', 'simulators'] + archs_device + archs_simu
 
+
 class PlatformListAction(argparse.Action):
 
     def __call__(self, parser, namespace, values, option_string=None):
@@ -237,15 +238,13 @@ def check_tools():
         error("iOS SDK not found, please install Xcode from AppStore or equivalent.")
         reterr = 1
     else:
-        xcode_version = float(Popen("xcodebuild -version".split(" "), stdout=PIPE).stdout.read().split("\n")[0].split(" ")[1])
-        if xcode_version < 7.0:
-            sdk_platform_path = Popen(
-                "xcrun --sdk iphonesimulator --show-sdk-platform-path".split(" "), stdout=PIPE, stderr=devnull).stdout.read()[:-1]
-            sdk_strings_path = "{}/{}".format(sdk_platform_path, "Developer/usr/bin/strings")
-            if not os.path.isfile(sdk_strings_path):
-                strings_path = find_executable("strings")
-                error("strings binary missing, please run:\n\tsudo ln -s {} {}".format(strings_path, sdk_strings_path))
-                reterr = 1
+        sdk_platform_path = Popen(
+            "xcrun --sdk iphonesimulator --show-sdk-platform-path".split(" "), stdout=PIPE, stderr=devnull).stdout.read()[:-1]
+        sdk_strings_path = "{}/{}".format(sdk_platform_path, "Developer/usr/bin/strings")
+        if not os.path.isfile(sdk_strings_path):
+            strings_path = find_executable("strings")
+            error("strings binary missing, please run:\n\tsudo ln -s {} {}".format(strings_path, sdk_strings_path))
+            reterr = 1
 
     return reterr
 
@@ -341,7 +340,7 @@ libs_list={libs_list}
 LINPHONE_IPHONE_VERSION=$(shell git describe --always)
 
 .PHONY: all
-.SILENT: sdk
+.SILENT: lipo
 
 all: build
 
@@ -384,11 +383,11 @@ veryclean: $(addprefix veryclean-,$(packages))
 generate-dummy-%:
 \t@echo "[{archs}] Generating dummy $* static library." ; \\
 \tprintf "void $*_init() {{}}" | tr '-' '_' > .dummy.c ; \\
-\tfor arch in {archs}; do clang -c .dummy.c -arch $$arch -o .dummy-$$arch.tbd; done ; \\
-\tlipo -create -output .dummy.tbd .dummy-*.tbd; \\
-\trm .dummy-*.tbd .dummy.c
+\tfor arch in {archs}; do clang -c .dummy.c -arch $$arch -o .dummy-$$arch.a; done ; \\
+\tlipo -create -output .dummy.a .dummy-*.a ; \\
+\trm .dummy-*.a .dummy.c
 
-sdk:
+lipo:
 \tarchives=`find liblinphone-sdk/{first_arch}-apple-darwin.ios -name *.a` && \\
 \trm -rf liblinphone-sdk/apple-darwin && \\
 \tmkdir -p liblinphone-sdk/apple-darwin && \\
@@ -415,18 +414,18 @@ sdk:
 \t\tfi ; \\
 \t\tif ! test -f $$library_path ; then \\
 \t\t\t$(MAKE) generate-dummy-$$lib ; \\
-\t\t\tmv .dummy.tbd $$library_path ; \\
+\t\t\tmv .dummy.a $$library_path ; \\
 \t\tfi \\
 \tdone
 
 build: $(addprefix all-,$(archs))
-\t$(MAKE) sdk
+\t$(MAKE) lipo
 
 ipa: build
 \txcodebuild -configuration Release \\
 \t&& xcrun -sdk iphoneos PackageApplication -v build/Release-iphoneos/linphone.app -o $$PWD/linphone-iphone.ipa
 
-sdkzip: sdk
+sdk: build
 \techo "Generating SDK zip file for version $(LINPHONE_IPHONE_VERSION)"
 \tzip -r liblinphone-iphone-sdk-$(LINPHONE_IPHONE_VERSION).zip \\
 \tliblinphone-sdk/apple-darwin \\
@@ -459,8 +458,7 @@ help: help-prepare-options
 \t@echo "Available targets:"
 \t@echo ""
 \t@echo "   * all or build: builds all architectures and creates the liblinphone SDK"
-\t@echo "   * sdk: creates the liblinphone SDK. Use this only after a full build"
-\t@echo "   * zipsdk: generates a ZIP archive of liblinphone-sdk/apple-darwin containing the SDK. Use this only after SDK is built."
+\t@echo "   * sdk: generates a ZIP archive of liblinphone-sdk/apple-darwin containing the SDK. Use this only after a full build."
 \t@echo "   * zipres: creates a tar.gz file with all the resources (images)"
 \t@echo ""
 \t@echo "=== Advanced usage ==="

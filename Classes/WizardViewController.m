@@ -119,6 +119,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 											   object:nil];
 }
 
+
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -127,6 +128,8 @@ static UICompositeViewDescription *compositeDescription = nil;
 - (void)viewDidLoad {
 	[super viewDidLoad];
 
+
+    
 	[viewTapGestureRecognizer setCancelsTouchesInView:FALSE];
 	[viewTapGestureRecognizer setDelegate:self];
 	[contentView addGestureRecognizer:viewTapGestureRecognizer];
@@ -154,6 +157,9 @@ static UICompositeViewDescription *compositeDescription = nil;
 			text.placeholder = NSLocalizedString(@"Username", nil);
 		}
 	}
+    
+    //set data
+    domainSourceData = ADVANCE2000_SERVERS;
 }
 
 #pragma mark -
@@ -246,7 +252,8 @@ static UICompositeViewDescription *compositeDescription = nil;
 	if ([[LinphoneManager instance] lpConfigBoolForKey:@"hide_wizard_welcome_view_preference"] == true) {
 		[self changeView:choiceView back:FALSE animation:FALSE];
 	} else {
-		[self changeView:welcomeView back:FALSE animation:FALSE];
+        [self onStartClick:self];
+		[self changeView:externalAccountView back:FALSE animation:FALSE];//welcomeView externalAccountView
 	}
 	[waitView setHidden:TRUE];
 }
@@ -647,10 +654,59 @@ static UICompositeViewDescription *compositeDescription = nil;
 	}
 }
 
+#pragma mark - UIPicker View
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return domainSourceData.count;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return  1;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    return [domainSourceData allKeys][row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    domainTF.text = [domainSourceData allKeys][row];
+    [domainTF resignFirstResponder];
+}
+
 #pragma mark - Action Functions
 
 - (IBAction)onStartClick:(id)sender {
-	[self changeView:choiceView back:FALSE animation:TRUE];
+	[self changeView:externalAccountView back:FALSE animation:TRUE];//old choiceView
+    
+    //add text field dropdown list
+    
+    domainTF=[WizardViewController findTextField:ViewElement_Domain view:contentView];
+    pickerDomains = [[UIPickerView alloc] init];
+    pickerDomains.dataSource = self;
+    pickerDomains.delegate = self;
+    
+    domainTF.inputView = pickerDomains;
+    
+    UIToolbar *toolBar= [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
+    [toolBar setBarStyle:UIBarStyleDefault];
+    
+    UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                      style:UIBarButtonItemStyleDone target:self action:@selector(doneActinon:)];
+    
+    UILabel *labelAccesory = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 300, 44)];
+    labelAccesory.backgroundColor = [UIColor clearColor];
+    labelAccesory.textColor=[UIColor grayColor];
+    labelAccesory.text=@"Select your prefered server";
+    UIBarButtonItem *titleBar = [[UIBarButtonItem alloc] initWithCustomView:labelAccesory];
+    
+    toolBar.items = @[barButtonDone,titleBar];
+    barButtonDone.tintColor=[UIColor blackColor];
+    //[pickerDomains addSubview:toolBar];
+    domainTF.inputAccessoryView = toolBar;
+}
+-(void) doneActinon:(id)sender
+{
+      domainTF.text = [domainSourceData allKeys][[pickerDomains selectedRowInComponent:0]];
+     [domainTF resignFirstResponder];
 }
 
 - (IBAction)onBackClick:(id)sender {
@@ -763,9 +819,14 @@ static UICompositeViewDescription *compositeDescription = nil;
 - (IBAction)onSignInExternalClick:(id)sender {
 	NSString *username = [WizardViewController findTextField:ViewElement_Username view:contentView].text;
 	NSString *password = [WizardViewController findTextField:ViewElement_Password view:contentView].text;
+    
 	NSString *domain = [WizardViewController findTextField:ViewElement_Domain view:contentView].text;
 	NSString *transport = [self.transportChooser titleForSegmentAtIndex:self.transportChooser.selectedSegmentIndex];
 
+    //override the transport
+    transport=@"TCP";
+    domain=[domainSourceData objectForKey:domain];
+    
 	[self verificationSignInWithUsername:username password:password domain:domain withTransport:transport];
 }
 

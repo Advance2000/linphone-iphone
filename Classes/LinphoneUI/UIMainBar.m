@@ -419,7 +419,32 @@ static NSString *const kDisappearAnimation = @"disappear";
 }
 
 - (IBAction)onChatClick:(id)event {
-	[[PhoneMainView instance] changeCurrentView:[ChatViewController compositeViewDescription]];
+	//[[PhoneMainView instance] changeCurrentView:[ChatViewController compositeViewDescription]];
+    
+    //NSString *dtmfAfterPickup=@"";
+    
+   // NSString *telString = [NSString stringWithFormat:@"tel:800"];
+    
+    //[[UIApplication sharedApplication] openURL:[NSURL URLWithString:telString]];
+    
+    // Go to dialer view
+    DialerViewController *controller = DYNAMIC_CAST(
+                                                    [[PhoneMainView instance] changeCurrentView:[DialerViewController compositeViewDescription]],
+                                                    DialerViewController);
+    if (controller != nil) {
+        //if([[[CustomSettings sharedSettings] getVoiceMailDirectory] length]>0)
+            //[controller call:[NSString stringWithFormat:@"%@%@",ADVANCE2000_VOICEMAIL_NUMBER,[[CustomSettings sharedSettings] getVoiceMailDirectory]] displayName:@"VoiceMail"];
+            [controller call:[NSString stringWithFormat:@"%@",ADVANCE2000_VOICEMAIL_NUMBER] displayName:@"VoiceMail"];
+//        else
+//        {
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil
+//                                                            message:NSLocalizedString(@"Please set Voice Mail Directory first!", nil)
+//                                                           delegate:nil
+//                                                  cancelButtonTitle:NSLocalizedString(@"OK", nil)
+//                                                  otherButtonTitles:nil];
+//            [alert show];
+//        }
+    }
 }
 
 #pragma mark - TPMultiLayoutViewController Functions

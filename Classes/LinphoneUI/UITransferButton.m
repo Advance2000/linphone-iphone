@@ -58,7 +58,14 @@
 #pragma mark -
 
 - (void)touchUp:(id)sender {
-	[[LinphoneManager instance] call:[addressField text] displayName:nil transfer:TRUE];
+    
+    NSString *newAddress ;
+    if ([[[addressField text] substringToIndex:1] isEqualToString:@"+"] && [[CustomSettings sharedSettings] getSubstitutePlus])
+        newAddress =[NSString stringWithFormat:@"011%@",[[addressField text] substringFromIndex:1]];
+    else
+        newAddress=[addressField text];
+    
+	[[LinphoneManager instance] call:newAddress displayName:nil transfer:TRUE];
 }
 
 @end

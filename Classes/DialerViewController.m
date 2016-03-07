@@ -377,7 +377,14 @@ static UICompositeViewDescription *compositeDescription = nil;
 }
 
 - (void)call:(NSString *)address displayName:(NSString *)displayName {
-	[[LinphoneManager instance] call:address displayName:displayName transfer:transferMode];
+    
+    NSString *newAddress ;
+    if ([[address substringToIndex:1] isEqualToString:@"+"] && [[CustomSettings sharedSettings] getSubstitutePlus])
+        newAddress =[NSString stringWithFormat:@"011%@",[address substringFromIndex:1]];
+    else
+        newAddress=address;
+    
+	[[LinphoneManager instance] call:newAddress displayName:displayName transfer:transferMode];
 }
 
 #pragma mark - UITextFieldDelegate Functions

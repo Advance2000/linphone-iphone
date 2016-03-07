@@ -133,6 +133,8 @@ extern void linphone_iphone_log_handler(int lev, const char *fmt, va_list args);
 				int port = linphone_address_get_port(proxy_addr);
 
 				[self setCString:linphone_address_get_username(addr) forKey:@"username_preference"];
+                
+               
 				[self setCString:linphone_address_get_domain(addr) forKey:@"domain_preference"];
 				if (strcmp(linphone_address_get_domain(addr), linphone_address_get_domain(proxy_addr)) != 0 ||
 					port > 0) {
@@ -167,14 +169,14 @@ extern void linphone_iphone_log_handler(int lev, const char *fmt, va_list args);
 				// actually in Call section but proxy config dependent
 				[self setCString:linphone_proxy_config_get_dial_prefix(cfg) forKey:@"prefix_preference"];
 				// actually in Call section but proxy config dependent
-				[self setBool:linphone_proxy_config_get_dial_escape_plus(cfg) forKey:@"substitute_+_by_00_preference"];
+				[self setBool:[[CustomSettings sharedSettings]getSubstitutePlus] forKey:@"substitute_+_by_00_preference"];//linphone_proxy_config_get_dial_escape_plus(cfg)
 			}
 		} else {
 			[self setObject:@"" forKey:@"username_preference"];
 			[self setObject:@"" forKey:@"password_preference"];
 			[self setObject:@"" forKey:@"domain_preference"];
 			[self setObject:@"" forKey:@"proxy_preference"];
-			[self setCString:"udp" forKey:@"transport_preference"];
+			[self setCString:"tcp" forKey:@"transport_preference"];
 			[self setBool:FALSE forKey:@"outbound_proxy_preference"];
 			[self setBool:FALSE forKey:@"avpf_preference"];
 			// actually in Advanced section but proxy config dependent
@@ -392,6 +394,7 @@ extern void linphone_iphone_log_handler(int lev, const char *fmt, va_list args);
 	NSString *transport = [self stringForKey:@"transport_preference"];
 	NSString *accountHa1 = [self stringForKey:@"ha1_preference"];
 	NSString *accountPassword = [self stringForKey:@"password_preference"];
+
 	bool isOutboundProxy = [self boolForKey:@"outbound_proxy_preference"];
 	BOOL use_avpf = [self boolForKey:@"avpf_preference"];
 
@@ -476,8 +479,13 @@ extern void linphone_iphone_log_handler(int lev, const char *fmt, va_list args);
 		if ([self objectForKey:@"substitute_+_by_00_preference"]) {
 			bool substitute_plus_by_00 = [self boolForKey:@"substitute_+_by_00_preference"];
 			linphone_proxy_config_set_dial_escape_plus(proxyCfg, substitute_plus_by_00);
+            if (substitute_plus_by_00)
+                [[CustomSettings sharedSettings] setSubstitutePlus:YES];
+            else
+                [[CustomSettings sharedSettings] setSubstitutePlus:NO];
 		}
-
+      
+        
 		[lm lpConfigSetInt:pushnotification forKey:@"pushnotification_preference"];
 		[[LinphoneManager instance] configurePushTokenForProxyConfig:proxyCfg];
 
@@ -562,7 +570,7 @@ extern void linphone_iphone_log_handler(int lev, const char *fmt, va_list args);
 			[self valueChangedForKey:@"transport_preference"] || [self valueChangedForKey:@"port_preference"] ||
 			[self valueChangedForKey:@"random_port_preference"] || [self valueChangedForKey:@"prefix_preference"] ||
 			[self valueChangedForKey:@"substitute_+_by_00_preference"] || [self valueChangedForKey:@"use_ipv6"] ||
-			[self valueChangedForKey:@"avpf_preference"] || [self valueChangedForKey:@"pushnotification_preference"];
+			[self valueChangedForKey:@"avpf_preference"] || [self valueChangedForKey:@"pushnotification_preference"]|| [self valueChangedForKey:@"voice_mail_directory"]||[self boolForKey:@"wifi_only_preference"];
 		if (account_changed)
 			[self synchronizeAccount];
 
@@ -651,8 +659,15 @@ extern void linphone_iphone_log_handler(int lev, const char *fmt, va_list args);
 		linphone_core_set_inc_timeout(lc, [self integerForKey:@"incoming_call_timeout_preference"]);
 		linphone_core_set_in_call_timeout(lc, [self integerForKey:@"in_call_timeout_preference"]);
 		[lm lpConfigSetString:[self stringForKey:@"voice_mail_uri_preference"] forKey:@"voice_mail_uri"];
+        
+        
 		[lm lpConfigSetBool:[self boolForKey:@"repeat_call_notification_preference"]
 					 forKey:@"repeat_call_notification"];
+        
+        [lm lpConfigSetString:[self stringForKey:@"voice_mail_directory"] forKey:@"voice_mail_directory"];
+        if ([self stringForKey:@"voice_mail_directory"])
+            [[CustomSettings sharedSettings] setVoiceMailDirectory:[self stringForKey:@"voice_mail_directory"]];
+
 	}
 
 	// network section

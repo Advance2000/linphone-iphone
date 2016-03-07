@@ -225,13 +225,11 @@ static RootViewManager *rootViewManagerInstance = nil;
 		}
 	}
 }
-
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
-- (UIInterfaceOrientationMask)supportedInterfaceOrientations
+#if __IPHONE_OS_VERSION_MAX_ALLOWED < 90000
+- (NSUInteger)supportedInterfaceOrientations{
 #else
-- (NSUInteger)supportedInterfaceOrientations
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
 #endif
-{
 	if ([LinphoneManager runningOnIpad] || [mainViewController currentViewSupportsLandscape])
 		return UIInterfaceOrientationMaskAll;
 	else {

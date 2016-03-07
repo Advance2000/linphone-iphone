@@ -59,7 +59,7 @@
 @end
 
 
-@interface IASKAppSettingsViewController : UITableViewController <IASKViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate> {
+@interface IASKAppSettingsViewController : UITableViewController <IASKViewController, UITextFieldDelegate, MFMailComposeViewControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource> {
 	id<IASKSettingsDelegate>  __weak _delegate;
     
     NSMutableArray          *_viewList;
@@ -74,6 +74,11 @@
     BOOL                    _showDoneButton;
 	
     NSSet                   *_hiddenKeys;
+    
+    NSDictionary *domainSourceData;
+    NSDictionary *domainSourceDataIP;
+    UITextField *domainTF;
+    UIPickerView *pickerDomains;
 }
 
 @property (nonatomic, weak) IBOutlet id delegate;

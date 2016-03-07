@@ -29,6 +29,11 @@
 	[tester tapViewWithAccessibilityLabel:@"Dialer"];
 }
 
+#pragma mark - State
+
++ (void)switchToValidAccountWithTester:(KIFTestCase *)testCase {
+}
+
 #pragma mark - Utilities
 
 - (void)_linphoneLogin:(NSString *)username withPW:(NSString *)pw {
@@ -48,12 +53,16 @@
 	[tester tapViewWithAccessibilityLabel:@"Sign in SIP account"];
 
 	[tester enterText:[self me] intoViewWithAccessibilityLabel:@"Username"];
-	[tester enterText:[self me] intoViewWithAccessibilityLabel:@"Password"];
+	[tester enterText:@"testtest" intoViewWithAccessibilityLabel:@"Password"];
 	[tester enterText:[self accountDomain] intoViewWithAccessibilityLabel:@"Domain"];
 	[tester tapViewWithAccessibilityLabel:protocol];
 
 	[tester tapViewWithAccessibilityLabel:@"Sign in"];
-	[self waitForRegistration];
+
+	// check the registration state
+	UIView *regState = [tester waitForViewWithAccessibilityLabel:@"Registration state"];
+	[tester waitForTimeInterval:1];
+	[tester expectView:regState toContainText:@"Registered"];
 }
 
 #pragma mark - Tests
@@ -94,7 +103,9 @@
 	[self _linphoneLogin:@"testios" withPW:@"testtest"];
 
 	// check the registration state
-	[self waitForRegistration];
+	[tester waitForViewWithAccessibilityLabel:@"Registration state"
+										value:@"Registered"
+									   traits:UIAccessibilityTraitStaticText];
 }
 
 - (void)testLinphoneLoginWithBadPassword {

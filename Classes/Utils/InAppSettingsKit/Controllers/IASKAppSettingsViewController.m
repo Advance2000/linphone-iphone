@@ -26,6 +26,7 @@
 #import "IASKSpecifier.h"
 #import "IASKSpecifierValuesViewController.h"
 #import "IASKTextField.h"
+#import "LinphoneManager.h"
 
 //static const CGFloat KEYBOARD_ANIMATION_DURATION = 0.3;
 //static const CGFloat MINIMUM_SCROLL_FRACTION = 0.2;
@@ -393,6 +394,35 @@ CGRect IASKCGRectSwap(CGRect rect);
                                                                                            forKey:[slider key]]];
 }
 
+#pragma mark - UIPicker View
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return domainSourceData.count;
+}
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return  1;
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    if ([domainTF.text isEqualToString:[domainSourceData allKeys][row]])
+        [pickerView selectRow:row inComponent:component animated:YES];
+    
+    return [domainSourceData allKeys][row];
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    domainTF.text = [domainSourceData allKeys][row];
+    [self _textChanged:domainTF];
+    [domainTF resignFirstResponder];
+}
+
+-(void) doneActinon:(id)sender
+{
+    domainTF.text = [domainSourceData allKeys][[pickerDomains selectedRowInComponent:0]];
+    [self _textChanged:domainTF];
+    [domainTF resignFirstResponder];
+}
 
 #pragma mark -
 #pragma mark UITableView Functions
@@ -574,8 +604,55 @@ CGRect IASKCGRectSwap(CGRect rect);
 		} else {
 			textField.autocorrectionType = specifier.autoCorrectionType;
 		}
-		textField.textAlignment = (NSTextAlignment)specifier.textAlignment;
+		//textField.textAlignment = (NSTextAlignment)specifier.textAlignment;
 		textField.adjustsFontSizeToFitWidth = specifier.adjustsFontSizeToFitWidth;
+        
+        if ([textField.key isEqualToString:@"domain_preference"])
+        {
+            textField.userInteractionEnabled=NO;
+            //textField.text = @"aaaaa";
+            //set data
+            domainSourceData = ADVANCE2000_SERVERS;
+            domainSourceDataIP = ADVANCE2000_SERVERS_IP;
+            
+            textField.text=[domainSourceDataIP objectForKey:textField.text];
+            
+            //add text field dropdown list
+            
+            domainTF=textField;
+            pickerDomains = [[UIPickerView alloc] init];
+            pickerDomains.dataSource = self;
+            pickerDomains.delegate = self;
+            
+            domainTF.inputView = pickerDomains;
+            
+            
+            UIToolbar *toolBar= [[UIToolbar alloc] initWithFrame:CGRectMake(0,0,320,44)];
+            [toolBar setBarStyle:UIBarStyleDefault];
+            
+            UIBarButtonItem *barButtonDone = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+                                                                              style:UIBarButtonItemStyleDone target:self action:@selector(doneActinon:)];
+            
+            UILabel *labelAccesory = [[UILabel alloc] initWithFrame:CGRectMake(0, 30, 300, 44)];
+            labelAccesory.backgroundColor = [UIColor clearColor];
+            labelAccesory.textColor=[UIColor grayColor];
+            labelAccesory.text=@"Select your prefered server";
+            UIBarButtonItem *titleBar = [[UIBarButtonItem alloc] initWithCustomView:labelAccesory];
+            
+            toolBar.items = @[barButtonDone,titleBar];
+            barButtonDone.tintColor=[UIColor blackColor];
+            //[pickerDomains addSubview:toolBar];
+            domainTF.inputAccessoryView = toolBar;
+
+            
+        }
+        
+        if ([textField.key isEqualToString:@"voice_mail_directory"])
+        {
+            //NSLog(@"%@",[[CustomSettings sharedSettings] getVoiceMailDirectory]);
+            if ([[[CustomSettings sharedSettings] getVoiceMailDirectory] length]>0)
+                textField.text=[[CustomSettings sharedSettings] getVoiceMailDirectory];
+        }
 	}
 	else if ([specifier.type isEqualToString:kIASKPSSliderSpecifier]) {
 		if (specifier.minimumValueImage.length > 0) {
@@ -610,9 +687,9 @@ CGRect IASKCGRectSwap(CGRect rect);
 	cell.imageView.highlightedImage = specifier.highlightedCellImage;
     
 	if (![specifier.type isEqualToString:kIASKPSMultiValueSpecifier] && ![specifier.type isEqualToString:kIASKPSTitleValueSpecifier] && ![specifier.type isEqualToString:kIASKPSTextFieldSpecifier]) {
-		cell.textLabel.textAlignment = (NSTextAlignment)specifier.textAlignment;
+		//cell.textLabel.textAlignment = (NSTextAlignment)specifier.textAlignment;
 	}
-	cell.detailTextLabel.textAlignment = (NSTextAlignment)specifier.textAlignment;
+	//cell.detailTextLabel.textAlignment = (NSTextAlignment)specifier.textAlignment;
 	cell.textLabel.adjustsFontSizeToFitWidth = specifier.adjustsFontSizeToFitWidth;
 	cell.detailTextLabel.adjustsFontSizeToFitWidth = specifier.adjustsFontSizeToFitWidth;
     return cell;
@@ -836,6 +913,8 @@ CGRect IASKCGRectSwap(CGRect rect);
 - (void)_textChanged:(id)sender {
     IASKTextField *text = (IASKTextField*)sender;
     [_settingsStore setObject:[text text] forKey:[text key]];
+    if ([[text text] length]>0 && [text.key isEqual:@"voice_mail_directory"])
+        [[CustomSettings sharedSettings] setVoiceMailDirectory:[text text]];
     [[NSNotificationCenter defaultCenter] postNotificationName:kIASKAppSettingChanged
                                                         object:[text key]
                                                       userInfo:[NSDictionary dictionaryWithObject:[text text]

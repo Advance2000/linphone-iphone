@@ -80,7 +80,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 + (UICompositeViewDescription *)compositeViewDescription {
 	if (compositeDescription == nil) {
-		compositeDescription = [[UICompositeViewDescription alloc] init:@"Chat"
+		compositeDescription = [[UICompositeViewDescription alloc] init:@"VMail"
 																content:@"ChatViewController"
 															   stateBar:nil
 														stateBarEnabled:false

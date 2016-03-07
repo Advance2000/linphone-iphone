@@ -26,6 +26,10 @@
 @interface SettingsViewController: UIViewController<IASKSettingsDelegate, UICompositeViewDelegate, UIAlertViewDelegate, MFMailComposeViewControllerDelegate> {
 	@private
 	LinphoneCoreSettingsStore* settingsStore;
+    
+    NSDictionary *domainSourceData;
+    UITextField *domainTF;
+    UIPickerView *pickerDomains;
 }
 
 @property (nonatomic, strong) IBOutlet UINavigationController *navigationController;

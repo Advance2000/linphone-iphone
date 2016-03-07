@@ -58,5 +58,5 @@
 - (UIImage *)cellImage;
 - (UIImage *)highlightedCellImage;
 - (BOOL)adjustsFontSizeToFitWidth;
-- (NSTextAlignment)textAlignment;
+//- (UITextAlignment)textAlignment;
 @end

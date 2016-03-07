@@ -111,12 +111,6 @@
 			<string>IASKUITextAlignmentRight</string>
 		</dict>
 		<dict>
-			<key>Title</key>
-			<string>Primary account</string>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-		</dict>
-		<dict>
 			<key>AutocapitalizationType</key>
 			<string>None</string>
 			<key>AutocorrectionType</key>
@@ -157,12 +151,6 @@
 			<string>PSTextFieldSpecifier</string>
 			<key>IASKTextAlignment</key>
 			<string>IASKUITextAlignmentRight</string>
-		</dict>
-		<dict>
-			<key>Type</key>
-			<string>PSGroupSpecifier</string>
-			<key>Title</key>
-			<string>File sharing</string>
 		</dict>
 		<dict>
 			<key>AutocapitalizationType</key>

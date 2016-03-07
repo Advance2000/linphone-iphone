@@ -194,6 +194,8 @@
 		7066FC0C13E830E400EFC6DC /* libvpx.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7066FC0B13E830E400EFC6DC /* libvpx.a */; };
 		70E542F313E147E3002BA2C0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E542F213E147E3002BA2C0 /* OpenGLES.framework */; };
 		70E542F513E147EB002BA2C0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70E542F413E147EB002BA2C0 /* QuartzCore.framework */; };
+		A3521C151BC526E200E3007E /* CustomSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = A3521C141BC526E200E3007E /* CustomSettings.m */; };
+		A3C65E021C0C7C3A00050B3E /* linphone_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = A3C65E011C0C7C3A00050B3E /* linphone_logo_white.png */; };
 		C90FAA7915AF54E6002091CB /* HistoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C90FAA7715AF54E6002091CB /* HistoryDetailsViewController.m */; };
 		C9C8254315AE204D00D493FA /* options_add_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = C9C8253F15AE204D00D493FA /* options_add_disabled.png */; };
 		C9C8254515AE204D00D493FA /* options_transfer_disabled.png in Resources */ = {isa = PBXBuildFile; fileRef = C9C8254015AE204D00D493FA /* options_transfer_disabled.png */; };
@@ -958,7 +960,7 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* LinphoneAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinphoneAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* LinphoneAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinphoneAppDelegate.m; sourceTree = "<group>"; };
-		1D6058910D05DD3D006BFB54 /* linphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = linphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D6058910D05DD3D006BFB54 /* Andvance2000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Andvance2000.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		220FAD2910765B400068D98F /* libgsm.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgsm.a; path = "liblinphone-sdk/apple-darwin/lib/libgsm.a"; sourceTree = "<group>"; };
 		220FAD2C10765B400068D98F /* libortp.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libortp.a; path = "liblinphone-sdk/apple-darwin/lib/libortp.a"; sourceTree = "<group>"; };
@@ -1141,7 +1143,10 @@
 		7066FC0B13E830E400EFC6DC /* libvpx.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libvpx.a; path = "liblinphone-sdk/apple-darwin/lib/libvpx.a"; sourceTree = "<group>"; };
 		70E542F213E147E3002BA2C0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		70E542F413E147EB002BA2C0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8D1107310486CEB800E47090 /* linphone-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "linphone-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Andvance2000-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Andvance2000-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A3521C131BC526E200E3007E /* CustomSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomSettings.h; sourceTree = "<group>"; };
+		A3521C141BC526E200E3007E /* CustomSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomSettings.m; sourceTree = "<group>"; };
+		A3C65E011C0C7C3A00050B3E /* linphone_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = linphone_logo_white.png; sourceTree = "<group>"; };
 		C90FAA7615AF54E6002091CB /* HistoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailsViewController.h; sourceTree = "<group>"; };
 		C90FAA7715AF54E6002091CB /* HistoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailsViewController.m; sourceTree = "<group>"; };
 		C9B3A6FD15B485DB006F52EE /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
@@ -1756,7 +1761,7 @@
 		F070E6321A2622EC00E17AFD /* incall_padding_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = incall_padding_right.png; path = Resources/incall_padding_right.png; sourceTree = "<group>"; };
 		F088488C19FF8C41007FFCF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/UIContactCell.xib; sourceTree = "<group>"; };
 		F088488F19FF8C44007FFCF3 /* fr */ = {isa = PBXFileReference; fileEncoding = 2483028224; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/UIContactCell.strings; sourceTree = "<group>"; };
-		F08F118419C09C6A007D70C2 /* liblinphoneTesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = liblinphoneTesterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F08F118419C09C6A007D70C2 /* Andvance2000.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Andvance2000.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0938158188E629800A55DFA /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = "<group>"; };
 		F09548181883F15300E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChatRoomViewController.xib; sourceTree = "<group>"; };
 		F09548191883F15300E8A69B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ChatViewController.xib; sourceTree = "<group>"; };
@@ -1871,7 +1876,7 @@
 		F0B89C2518DC973E0050B60E /* wizard_linphone_create.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wizard_linphone_create.rc; path = Resources/wizard_linphone_create.rc; sourceTree = "<group>"; };
 		F0B89C2618DC973E0050B60E /* wizard_linphone_existing.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wizard_linphone_existing.rc; path = Resources/wizard_linphone_existing.rc; sourceTree = "<group>"; };
 		F0B89C2718DC973E0050B60E /* wizard_remote.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = wizard_remote.rc; path = Resources/wizard_remote.rc; sourceTree = "<group>"; };
-		F0BB8BD51936208100974404 /* liblinphoneTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = liblinphoneTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0BB8BD51936208100974404 /* Andvance2000.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Andvance2000.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BB8C0F193623F200974404 /* liblinphonetester.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblinphonetester.a; path = "liblinphone-sdk/apple-darwin/lib/liblinphonetester.a"; sourceTree = "<group>"; };
 		F0BB8C111936240300974404 /* libcunit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcunit.a; path = "liblinphone-sdk/apple-darwin/lib/libcunit.a"; sourceTree = "<group>"; };
 		F0BB8C311936246600974404 /* AudioUnit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioUnit.framework; path = System/Library/Frameworks/AudioUnit.framework; sourceTree = SDKROOT; };
@@ -1886,7 +1891,7 @@
 		F0C1F90A1A28781F009402C9 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		F0C1F90B1A28781F009402C9 /* strech-bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "strech-bottom.png"; sourceTree = "<group>"; };
 		F0C1F90C1A28781F009402C9 /* strech-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "strech-top.png"; sourceTree = "<group>"; };
-		F0F952001A6AEB1000254160 /* linphoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = linphoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0F952001A6AEB1000254160 /* Andvance2000.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Andvance2000.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0FF66AA1ACAEEB0008A4486 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = ../../../../Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/IOKit.framework; sourceTree = "<group>"; };
 		F84015BC1939FE37006ABAB5 /* test_failed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_failed.png; path = Resources/test_failed.png; sourceTree = "<group>"; };
 		F84015BD1939FE37006ABAB5 /* test_inprogress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = test_inprogress.png; path = Resources/test_inprogress.png; sourceTree = "<group>"; };
@@ -2134,10 +2139,10 @@
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D6058910D05DD3D006BFB54 /* linphone.app */,
-				F0BB8BD51936208100974404 /* liblinphoneTester.app */,
-				F08F118419C09C6A007D70C2 /* liblinphoneTesterTests.xctest */,
-				F0F952001A6AEB1000254160 /* linphoneTests.xctest */,
+				1D6058910D05DD3D006BFB54 /* Andvance2000.app */,
+				F0BB8BD51936208100974404 /* Andvance2000.app */,
+				F08F118419C09C6A007D70C2 /* Andvance2000.xctest */,
+				F0F952001A6AEB1000254160 /* Andvance2000.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2275,7 +2280,7 @@
 				F0B4FB5C1A65550B00637027 /* Images.xcassets */,
 				F0B89C2318DC90850050B60E /* images */,
 				D37E3ECF1619DCC50087659A /* licenses.html */,
-				8D1107310486CEB800E47090 /* linphone-Info.plist */,
+				8D1107310486CEB800E47090 /* Andvance2000-Info.plist */,
 				57F005C315EE2CCF00914747 /* linphonerc */,
 				57F005C615EE2D9200914747 /* linphonerc-factory */,
 				57F005C715EE2D9200914747 /* linphonerc-factory~ipad */,
@@ -2564,6 +2569,8 @@
 			children = (
 				D3807FC915C2894A005BE9BC /* IASKAppSettingsViewController.h */,
 				D3807FCA15C2894A005BE9BC /* IASKAppSettingsViewController.m */,
+				A3521C131BC526E200E3007E /* CustomSettings.h */,
+				A3521C141BC526E200E3007E /* CustomSettings.m */,
 				D3807FCB15C2894A005BE9BC /* IASKAppSettingsWebViewController.h */,
 				D3807FCC15C2894A005BE9BC /* IASKAppSettingsWebViewController.m */,
 				D3807FCD15C2894A005BE9BC /* IASKSpecifierValuesViewController.h */,
@@ -3147,6 +3154,7 @@
 		F0C1F9021A28781F009402C9 /* launchscreen */ = {
 			isa = PBXGroup;
 			children = (
+				A3C65E011C0C7C3A00050B3E /* linphone_logo_white.png */,
 				F0C1F9041A28781F009402C9 /* background-launch.png */,
 				F0C1F9061A28781F009402C9 /* corner-left-bottom.png */,
 				F0C1F9071A28781F009402C9 /* corner-left-top.png */,
@@ -3163,9 +3171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D6058900D05DD3D006BFB54 /* linphone */ = {
+		1D6058900D05DD3D006BFB54 /* Andvance2000 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "linphone" */;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Andvance2000" */;
 			buildPhases = (
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				63DCC71D1A07B08E00916627 /* Run Script */,
@@ -3180,14 +3188,14 @@
 				D3554ED515CA79B900478841 /* PBXTargetDependency */,
 				D3B90E1B15C2CBC800F64F8C /* PBXTargetDependency */,
 			);
-			name = linphone;
+			name = Andvance2000;
 			productName = linphone;
-			productReference = 1D6058910D05DD3D006BFB54 /* linphone.app */;
+			productReference = 1D6058910D05DD3D006BFB54 /* Andvance2000.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F08F118319C09C6A007D70C2 /* liblinphoneTesterTests */ = {
+		F08F118319C09C6A007D70C2 /* libAndvance2000TesterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F08F119319C09C6B007D70C2 /* Build configuration list for PBXNativeTarget "liblinphoneTesterTests" */;
+			buildConfigurationList = F08F119319C09C6B007D70C2 /* Build configuration list for PBXNativeTarget "libAndvance2000TesterTests" */;
 			buildPhases = (
 				F08F118019C09C6A007D70C2 /* Sources */,
 				F08F118119C09C6A007D70C2 /* Frameworks */,
@@ -3198,14 +3206,14 @@
 			dependencies = (
 				F08F119219C09C6B007D70C2 /* PBXTargetDependency */,
 			);
-			name = liblinphoneTesterTests;
+			name = libAndvance2000TesterTests;
 			productName = LinphoneTesterTests;
-			productReference = F08F118419C09C6A007D70C2 /* liblinphoneTesterTests.xctest */;
+			productReference = F08F118419C09C6A007D70C2 /* Andvance2000.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F0BB8BD41936208100974404 /* liblinphoneTester */ = {
+		F0BB8BD41936208100974404 /* libAndvance2000Tester */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0BB8C051936208200974404 /* Build configuration list for PBXNativeTarget "liblinphoneTester" */;
+			buildConfigurationList = F0BB8C051936208200974404 /* Build configuration list for PBXNativeTarget "libAndvance2000Tester" */;
 			buildPhases = (
 				F0BB8BD11936208100974404 /* Sources */,
 				F0BB8BD21936208100974404 /* Frameworks */,
@@ -3216,14 +3224,14 @@
 			);
 			dependencies = (
 			);
-			name = liblinphoneTester;
+			name = libAndvance2000Tester;
 			productName = LinphoneTester;
-			productReference = F0BB8BD51936208100974404 /* liblinphoneTester.app */;
+			productReference = F0BB8BD51936208100974404 /* Andvance2000.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F0F951FF1A6AEB1000254160 /* linphoneTests */ = {
+		F0F951FF1A6AEB1000254160 /* Andvance2000Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0F9520C1A6AEB1100254160 /* Build configuration list for PBXNativeTarget "linphoneTests" */;
+			buildConfigurationList = F0F9520C1A6AEB1100254160 /* Build configuration list for PBXNativeTarget "Andvance2000Tests" */;
 			buildPhases = (
 				F0F951FC1A6AEB1000254160 /* Sources */,
 				F0F951FD1A6AEB1000254160 /* Frameworks */,
@@ -3235,9 +3243,9 @@
 				63058A4E1B4E832500EFAE36 /* PBXTargetDependency */,
 				F0F952071A6AEB1000254160 /* PBXTargetDependency */,
 			);
-			name = linphoneTests;
+			name = Andvance2000Tests;
 			productName = KifTests;
-			productReference = F0F952001A6AEB1000254160 /* linphoneTests.xctest */;
+			productReference = F0F952001A6AEB1000254160 /* Andvance2000.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -3249,7 +3257,7 @@
 				LastUpgradeCheck = 0700;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = Z2V957B3D6;
+						DevelopmentTeam = XNZMH8RXL7;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -3265,12 +3273,12 @@
 					};
 					F0F951FF1A6AEB1000254160 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = Z2V957B3D6;
+						DevelopmentTeam = PW2PJVZV25;
 						TestTargetID = 1D6058900D05DD3D006BFB54;
 					};
 				};
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "linphone" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Andvance2000" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -3303,10 +3311,10 @@
 			);
 			projectRoot = "";
 			targets = (
-				1D6058900D05DD3D006BFB54 /* linphone */,
-				F0F951FF1A6AEB1000254160 /* linphoneTests */,
-				F0BB8BD41936208100974404 /* liblinphoneTester */,
-				F08F118319C09C6A007D70C2 /* liblinphoneTesterTests */,
+				1D6058900D05DD3D006BFB54 /* Andvance2000 */,
+				F0F951FF1A6AEB1000254160 /* Andvance2000Tests */,
+				F0BB8BD41936208100974404 /* libAndvance2000Tester */,
+				F08F118319C09C6A007D70C2 /* libAndvance2000TesterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -3449,6 +3457,7 @@
 				D3ED3E521585FFFD006C0DE4 /* statebar_background.png in Resources */,
 				F070E6381A2622EC00E17AFD /* incall_padding_right.png in Resources */,
 				D3ED3E6A15861A53006C0DE4 /* add_contact_default.png in Resources */,
+				A3C65E021C0C7C3A00050B3E /* linphone_logo_white.png in Resources */,
 				D3ED3E6C15861A53006C0DE4 /* add_contact_disabled.png in Resources */,
 				D3ED3E6E15861A53006C0DE4 /* add_contact_over.png in Resources */,
 				D3ED3E7215861ABD006C0DE4 /* call_default.png in Resources */,
@@ -4024,6 +4033,7 @@
 				22F2508E107141E100AC9B3F /* DialerViewController.m in Sources */,
 				22E0A822111C44E100B04932 /* AboutViewController.m in Sources */,
 				631C4FB119D2A8F2004BFE77 /* UIDigitButtonLongPlus.m in Sources */,
+				A3521C151BC526E200E3007E /* CustomSettings.m in Sources */,
 				2248E90E12F7E4CF00220D9C /* UIDigitButton.m in Sources */,
 				2214EB7A12F846B1002A5394 /* UICallButton.m in Sources */,
 				2214EB8912F84EBB002A5394 /* UIHangUpButton.m in Sources */,
@@ -4179,12 +4189,12 @@
 		};
 		F08F119219C09C6B007D70C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = F0BB8BD41936208100974404 /* liblinphoneTester */;
+			target = F0BB8BD41936208100974404 /* libAndvance2000Tester */;
 			targetProxy = F08F119119C09C6B007D70C2 /* PBXContainerItemProxy */;
 		};
 		F0F952071A6AEB1000254160 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1D6058900D05DD3D006BFB54 /* linphone */;
+			target = 1D6058900D05DD3D006BFB54 /* Andvance2000 */;
 			targetProxy = F0F952061A6AEB1000254160 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -4616,7 +4626,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4625,12 +4634,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = linphone_Prefix.pch;
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					DEBUG,
 					USE_APN_DEV,
@@ -4643,7 +4653,7 @@
 					"$(SRCROOT)/Classes/Utils/NinePatch/",
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
-				INFOPLIST_FILE = "linphone-Info.plist";
+				INFOPLIST_FILE = "Andvance2000-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
@@ -4655,8 +4665,8 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				ORDER_FILE = "";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
-				PRODUCT_NAME = linphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advance2000.app;
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4678,8 +4688,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: jehan monnier";
-				ENABLE_BITCODE = NO;
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
@@ -4693,7 +4702,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
-				PROVISIONING_PROFILE = "0636A6EA-90EB-4D92-B707-19FC32F9A7CF";
+				PROVISIONING_PROFILE = "ec33fa1f-adf1-4f95-9a5a-ab211f62e40a";
 				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4705,7 +4714,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4715,12 +4723,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = linphone_Prefix.pch;
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -4729,7 +4738,7 @@
 					"$(SRCROOT)/Classes/Utils/NinePatch/",
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
-				INFOPLIST_FILE = "linphone-Info.plist";
+				INFOPLIST_FILE = "Andvance2000-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
@@ -4741,8 +4750,8 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				ORDER_FILE = "";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
-				PRODUCT_NAME = linphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advance2000.app;
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4764,8 +4773,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				ENABLE_BITCODE = NO;
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
@@ -4779,7 +4787,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "ec33fa1f-adf1-4f95-9a5a-ab211f62e40a";
 				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4791,7 +4799,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4800,12 +4807,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = linphone_Prefix.pch;
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = USE_APN_DEV;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
@@ -4815,7 +4823,7 @@
 					"$(SRCROOT)/Classes/Utils/NinePatch/",
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
-				INFOPLIST_FILE = "linphone-Info.plist";
+				INFOPLIST_FILE = "Andvance2000-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
@@ -4827,8 +4835,8 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				ORDER_FILE = "";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
-				PRODUCT_NAME = linphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advance2000.app;
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4850,8 +4858,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: jehan monnier";
-				ENABLE_BITCODE = NO;
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_THUMB_SUPPORT = NO;
@@ -4865,7 +4872,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
-				PROVISIONING_PROFILE = "C7F794BC-6D48-41F2-B37D-E1B1B1A40901";
+				PROVISIONING_PROFILE = "ec33fa1f-adf1-4f95-9a5a-ab211f62e40a";
 				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4877,7 +4884,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4887,12 +4893,13 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = linphone_Prefix.pch;
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_TREAT_IMPLICIT_FUNCTION_DECLARATIONS_AS_ERRORS = YES;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -4901,7 +4908,7 @@
 					"$(SRCROOT)/Classes/Utils/NinePatch/",
 					"$(SRCROOT)/Classes/Utils/XMLRPC/",
 				);
-				INFOPLIST_FILE = "linphone-Info.plist";
+				INFOPLIST_FILE = "Andvance2000-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(BUILT_PRODUCTS_DIR)",
@@ -4913,8 +4920,8 @@
 				LINK_WITH_STANDARD_LIBRARIES = YES;
 				ORDER_FILE = "";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = org.linphone.phone;
-				PRODUCT_NAME = linphone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.advance2000.app;
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4936,8 +4943,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jehan monnier (E8MYPN2NXL)";
-				ENABLE_BITCODE = NO;
+				CODE_SIGN_IDENTITY = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -4953,7 +4959,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2AC0DC11-4546-47B6-8B8A-453CCA80903C";
+				PROVISIONING_PROFILE = "ec33fa1f-adf1-4f95-9a5a-ab211f62e40a";
 				SDKROOT = iphoneos;
 				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -4986,7 +4992,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TestsLiblinphone/LinphoneTesterTests-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -5011,9 +5017,9 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liblinphoneTester.app/liblinphoneTester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -5042,7 +5048,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TestsLiblinphone/LinphoneTesterTests-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -5061,9 +5067,9 @@
 					"$(PROJECT_DIR)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liblinphoneTester.app/liblinphoneTester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -5093,7 +5099,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TestsLiblinphone/LinphoneTesterTests-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -5112,9 +5118,9 @@
 					"$(PROJECT_DIR)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liblinphoneTester.app/liblinphoneTester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -5144,7 +5150,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TestsLiblinphone/LinphoneTesterTests-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -5163,9 +5169,9 @@
 					"$(PROJECT_DIR)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/liblinphoneTester.app/liblinphoneTester";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -5196,7 +5202,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LiblinphoneTester/LinphoneTester-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -5221,7 +5227,7 @@
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -5252,7 +5258,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LiblinphoneTester/LinphoneTester-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -5271,7 +5277,7 @@
 					"$(PROJECT_DIR)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -5303,7 +5309,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LiblinphoneTester/LinphoneTester-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -5322,7 +5328,7 @@
 					"$(PROJECT_DIR)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -5354,7 +5360,7 @@
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "LiblinphoneTester/LinphoneTester-Prefix.pch";
+				GCC_PREFIX_HEADER = Andvance2000_Prefix.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -5373,7 +5379,7 @@
 					"$(PROJECT_DIR)/liblinphone-sdk/apple-darwin/lib/mediastreamer/plugins",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.belledonne-communications.tester.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -5431,9 +5437,9 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linphone.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/linphone.app/linphone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 			};
 			name = Debug;
 		};
@@ -5480,9 +5486,9 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linphone.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/linphone.app/linphone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -5530,9 +5536,9 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linphone.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/linphone.app/linphone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
@@ -5580,9 +5586,9 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.linphone.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Andvance2000;
 				PROVISIONING_PROFILE = "";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/linphone.app/linphone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Andvance2000.app/Andvance2000";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = DistributionAdhoc;
@@ -5590,7 +5596,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "linphone" */ = {
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "Andvance2000" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
@@ -5601,7 +5607,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "linphone" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Andvance2000" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
@@ -5612,7 +5618,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		F08F119319C09C6B007D70C2 /* Build configuration list for PBXNativeTarget "liblinphoneTesterTests" */ = {
+		F08F119319C09C6B007D70C2 /* Build configuration list for PBXNativeTarget "libAndvance2000TesterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F08F119419C09C6B007D70C2 /* Debug */,
@@ -5623,7 +5629,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		F0BB8C051936208200974404 /* Build configuration list for PBXNativeTarget "liblinphoneTester" */ = {
+		F0BB8C051936208200974404 /* Build configuration list for PBXNativeTarget "libAndvance2000Tester" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0BB8C061936208200974404 /* Debug */,
@@ -5634,7 +5640,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		F0F9520C1A6AEB1100254160 /* Build configuration list for PBXNativeTarget "linphoneTests" */ = {
+		F0F9520C1A6AEB1100254160 /* Build configuration list for PBXNativeTarget "Andvance2000Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F0F952081A6AEB1000254160 /* Debug */,

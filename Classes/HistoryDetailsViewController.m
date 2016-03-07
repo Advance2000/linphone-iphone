@@ -274,11 +274,14 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 	if (addr != NULL) {
 		[callButton setHidden:FALSE];
-		[messageButton setHidden:FALSE];
+		//[messageButton setHidden:FALSE];
 	} else {
 		[callButton setHidden:TRUE];
-		[messageButton setHidden:TRUE];
+		//[messageButton setHidden:TRUE];
 	}
+    
+    //always
+    [messageButton setHidden:TRUE];
 }
 
 #pragma mark - Action Functions

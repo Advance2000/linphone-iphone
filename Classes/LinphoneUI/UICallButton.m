@@ -100,7 +100,14 @@
 		if (contact) {
 			displayName = [FastAddressBook getContactDisplayName:contact];
 		}
-		[[LinphoneManager instance] call:address displayName:displayName transfer:FALSE];
+        
+        NSString *newAddress ;
+        if ([[address substringToIndex:1] isEqualToString:@"+"] && [[CustomSettings sharedSettings] getSubstitutePlus])
+            newAddress =[NSString stringWithFormat:@"011%@",[address substringFromIndex:1]];
+        else
+            newAddress=address;
+        
+		[[LinphoneManager instance] call:newAddress displayName:displayName transfer:FALSE];
 	}
 }
 

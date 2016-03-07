@@ -21,8 +21,6 @@
 
 - (UITableView *)findTableView:(NSString *)table;
 
-- (void)waitForRegistration;
-
 @end
 
 #define ASSERT_EQ(actual, expected)                                                                                    \

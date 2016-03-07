@@ -24,11 +24,11 @@
 		</dict>
 		<dict>
 			<key>DefaultValue</key>
-			<false/>
+			<true/>
 			<key>Key</key>
 			<string>substitute_+_by_00_preference</string>
 			<key>Title</key>
-			<string>Substitute + by 00</string>
+			<string>Substitute + by 011</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 		</dict>
@@ -115,6 +115,24 @@
 			<string>Repeat call notification</string>
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
+		</dict>
+		<dict>
+			<key>Key</key>
+			<string>voice_mail_directory</string>
+			<key>Title</key>
+			<string>Voice Mail Directory</string>
+			<key>AutocapitalizationType</key>
+			<string>None</string>
+			<key>AutocorrectionType</key>
+			<string>No</string>
+			<key>DefaultValue</key>
+			<string></string>
+			<key>IsSecure</key>
+			<false/>
+			<key>Type</key>
+			<string>PSTextFieldSpecifier</string>
+			<key>IASKTextAlignment</key>
+			<string>IASKUITextAlignmentRight</string>
 		</dict>
 	</array>
 </dict>

@@ -14,24 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-               BuildableName = "linphone.app"
-               BlueprintName = "linphone"
-               ReferencedContainer = "container:linphone.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F0F951FF1A6AEB1000254160"
-               BuildableName = "linphoneTests.xctest"
-               BlueprintName = "linphoneTests"
-               ReferencedContainer = "container:linphone.xcodeproj">
+               BlueprintIdentifier = "F0BB8BD41936208100974404"
+               BuildableName = "Andvance2000.app"
+               BlueprintName = "libAndvance2000Tester"
+               ReferencedContainer = "container:Andvance2000.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +32,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F0F951FF1A6AEB1000254160"
-               BuildableName = "linphoneTests.xctest"
-               BlueprintName = "linphoneTests"
-               ReferencedContainer = "container:linphone.xcodeproj">
+               BlueprintIdentifier = "F08F118319C09C6A007D70C2"
+               BuildableName = "Andvance2000.xctest"
+               BlueprintName = "libAndvance2000TesterTests"
+               ReferencedContainer = "container:Andvance2000.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "linphone.app"
-            BlueprintName = "linphone"
-            ReferencedContainer = "container:linphone.xcodeproj">
+            BlueprintIdentifier = "F0BB8BD41936208100974404"
+            BuildableName = "Andvance2000.app"
+            BlueprintName = "libAndvance2000Tester"
+            ReferencedContainer = "container:Andvance2000.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -79,18 +65,13 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "linphone.app"
-            BlueprintName = "linphone"
-            ReferencedContainer = "container:linphone.xcodeproj">
+            BlueprintIdentifier = "F0BB8BD41936208100974404"
+            BuildableName = "Andvance2000.app"
+            BlueprintName = "libAndvance2000Tester"
+            ReferencedContainer = "container:Andvance2000.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
-         <AdditionalOption
-            key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
-         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
@@ -103,10 +84,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1D6058900D05DD3D006BFB54"
-            BuildableName = "linphone.app"
-            BlueprintName = "linphone"
-            ReferencedContainer = "container:linphone.xcodeproj">
+            BlueprintIdentifier = "F0BB8BD41936208100974404"
+            BuildableName = "Andvance2000.app"
+            BlueprintName = "libAndvance2000Tester"
+            ReferencedContainer = "container:Andvance2000.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -114,7 +95,7 @@
       buildConfiguration = "Debug">
    </AnalyzeAction>
    <ArchiveAction
-      buildConfiguration = "Distribution"
+      buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>

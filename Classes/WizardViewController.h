@@ -29,13 +29,19 @@
     UICompositeViewDelegate,
     XMLRPCConnectionDelegate,
     UIGestureRecognizerDelegate,
-    UIAlertViewDelegate>
+    UIAlertViewDelegate,
+    UIPickerViewDelegate,
+    UIPickerViewDataSource>
 {
     @private
     UITextField *activeTextField;
     UIView *currentView;
     UIView *nextView;
     NSMutableArray *historyViews;
+    
+    NSDictionary *domainSourceData;
+    UITextField *domainTF;
+    UIPickerView *pickerDomains;
 }
 
 @property(nonatomic, strong) IBOutlet TPKeyboardAvoidingScrollView *contentView;

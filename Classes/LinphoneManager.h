@@ -36,6 +36,12 @@
 #include "linphone/linphonecore.h"
 #include "linphone/linphone_tunnel.h"
 
+#import "CustomSettings.h"
+
+#define ADVANCE2000_SERVERS  @{@"Server #1":@"74.112.122.84",@"Server #2":@"74.112.122.121"}
+#define ADVANCE2000_SERVERS_IP  @{@"74.112.122.84":@"Server #1",@"74.112.122.121":@"Server #2"}
+#define ADVANCE2000_VOICEMAIL_NUMBER @"*124"
+
 extern NSString *const LINPHONERC_APPLICATION_KEY;
 
 extern NSString *const kLinphoneCoreUpdate;

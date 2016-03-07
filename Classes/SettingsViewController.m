@@ -434,6 +434,7 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[self.view addSubview:navigationController.view];
 }
 
+
 - (void)viewWillDisappear:(BOOL)animated {
 	[super viewWillDisappear:animated];
 	[settingsController dismiss:self];
@@ -454,6 +455,10 @@ static UICompositeViewDescription *compositeDescription = nil;
 											 selector:@selector(appSettingChanged:)
 												 name:kIASKAppSettingChanged
 											   object:nil];
+    
+    //set data
+    domainSourceData = ADVANCE2000_SERVERS;
+    
 }
 
 #pragma mark - Event Functions
@@ -561,11 +566,11 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[hiddenKeys addObject:@"media_encryption_preference"];
 	}
 
-#ifndef DEBUG
+//--hide ADV--#ifndef DEBUG
 	[hiddenKeys addObject:@"release_button"];
 	[hiddenKeys addObject:@"clear_cache_button"];
 	[hiddenKeys addObject:@"battery_alert_button"];
-#endif
+//--hide ADV--#endif
 
 	if (![[LinphoneManager instance] lpConfigBoolForKey:@"debugenable_preference"]) {
 		[hiddenKeys addObject:@"send_logs_button"];
@@ -580,12 +585,12 @@ static UICompositeViewDescription *compositeDescription = nil;
 	[hiddenKeys addObject:@"incoming_call_timeout_preference"];
 	[hiddenKeys addObject:@"in_call_timeout_preference"];
 
-	[hiddenKeys addObject:@"wifi_only_preference"];
+	//--show ADV--[hiddenKeys addObject:@"wifi_only_preference"];
 
 	[hiddenKeys addObject:@"quit_button"];  // Hide for the moment
 	[hiddenKeys addObject:@"about_button"]; // Hide for the moment
 
-	if (!linphone_core_video_supported([LinphoneManager getLc]))
+	//--hide ADV-- if (!linphone_core_video_supported([LinphoneManager getLc]))
 		[hiddenKeys addObject:@"video_menu"];
 
 	if (![LinphoneManager isCodecSupported:"h264"]) {
@@ -610,19 +615,19 @@ static UICompositeViewDescription *compositeDescription = nil;
 
 	[hiddenKeys addObject:@"enable_first_login_view_preference"];
 
-	if (!linphone_core_video_supported([LinphoneManager getLc])) {
+	//--hide ADV--if (!linphone_core_video_supported([LinphoneManager getLc])) {
 		[hiddenKeys addObject:@"enable_video_preference"];
-	}
+	//}
 
-	if (!linphone_core_video_enabled([LinphoneManager getLc])) {
+	//--hide ADV--if (!linphone_core_video_enabled([LinphoneManager getLc])) {
 		[hiddenKeys addObject:@"video_menu"];
-	}
+	//}
 
-	if (!linphone_core_get_video_preset([LinphoneManager getLc]) ||
-		strcmp(linphone_core_get_video_preset([LinphoneManager getLc]), "custom") != 0) {
+	//--hide ADV--if (!linphone_core_get_video_preset([LinphoneManager getLc]) ||
+	//	strcmp(linphone_core_get_video_preset([LinphoneManager getLc]), "custom") != 0) {
 		[hiddenKeys addObject:@"video_preferred_fps_preference"];
 		[hiddenKeys addObject:@"download_bandwidth_preference"];
-	}
+	//}
 
 	[hiddenKeys addObjectsFromArray:[[LinphoneManager unsupportedCodecs] allObjects]];
 
@@ -650,12 +655,14 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[hiddenKeys addObject:@"tunnel_menu"];
 	}
 
-	if (![lm lpConfigBoolForKey:@"advanced_account_preference"]) {
+    
+	//--hide ADV--if (![lm lpConfigBoolForKey:@"advanced_account_preference"]) {
 		[hiddenKeys addObject:@"userid_preference"];
 		[hiddenKeys addObject:@"proxy_preference"];
 		[hiddenKeys addObject:@"outbound_proxy_preference"];
 		[hiddenKeys addObject:@"avpf_preference"];
-	}
+	//}
+
 
 	if (![[[LinphoneManager instance] iapManager] enabled]) {
 		[hiddenKeys addObject:@"in_app_products_button"];
@@ -664,7 +671,51 @@ static UICompositeViewDescription *compositeDescription = nil;
 	if ([[UIDevice currentDevice].systemVersion floatValue] < 8) {
 		[hiddenKeys addObject:@"repeat_call_notification_preference"];
 	}
-
+    
+    //additional --hide ADV
+    [hiddenKeys addObject:@"advanced_account_preference"];
+    [hiddenKeys addObject:@"audio_codec_bitrate_limit_preference"];
+    [hiddenKeys addObject:@"expire_preference"];
+    [hiddenKeys addObject:@"file_transfer_server_url_preference"];
+    [hiddenKeys addObject:@"transport_preference"];
+    
+    [hiddenKeys addObject:@"primary_displayname_preference"];
+    [hiddenKeys addObject:@"primary_username_preference"];
+    [hiddenKeys addObject:@"edge_opt_preference"];
+    [hiddenKeys addObject:@"stun_preference"];
+    [hiddenKeys addObject:@"ice_preference"];
+    [hiddenKeys addObject:@"random_port_preference"];
+    [hiddenKeys addObject:@"port_preference"];
+    [hiddenKeys addObject:@"audio_port_preference"];
+    [hiddenKeys addObject:@"video_port_preference"];
+    [hiddenKeys addObject:@"use_ipv6"];
+    [hiddenKeys addObject:@"media_encryption_preference"];
+    [hiddenKeys addObject:@"network_limit_group"];
+    [hiddenKeys addObject:@"adaptive_rate_control_group"];
+    [hiddenKeys addObject:@"adaptive_rate_control_preference"];
+    
+    [hiddenKeys addObject:@"codecs_menu_added"];
+    [hiddenKeys addObject:@"speex_16k_preference"];
+    [hiddenKeys addObject:@"speex_8k_preference"];
+    [hiddenKeys addObject:@"opus_preference"];
+    [hiddenKeys addObject:@"silk_24k_preference"];
+    [hiddenKeys addObject:@"silk_16k_preference"];
+    [hiddenKeys addObject:@"aaceld_16k_preference"];
+    [hiddenKeys addObject:@"aaceld_22k_preference"];
+    [hiddenKeys addObject:@"aaceld_32k_preference"];
+    [hiddenKeys addObject:@"aaceld_44k_preference"];
+    [hiddenKeys addObject:@"aaceld_48k_preference"];
+    [hiddenKeys addObject:@"amr_preference"];
+    [hiddenKeys addObject:@"g722_preference"];
+    [hiddenKeys addObject:@"g729_preference"];
+    [hiddenKeys addObject:@"gsm_preference"];
+    [hiddenKeys addObject:@"ilbc_preference"];
+    [hiddenKeys addObject:@"isac_preference"];
+    [hiddenKeys addObject:@"pcmu_preference"];
+    [hiddenKeys addObject:@"pcma_preference"];
+    [hiddenKeys addObject:@"voice_mail_uri_preference"];
+    [hiddenKeys addObject:@"voice_mail_directory"];
+    
 	return hiddenKeys;
 }
 
@@ -741,31 +792,32 @@ static UICompositeViewDescription *compositeDescription = nil;
 	} else if ([key isEqualToString:@"reset_logs_button"]) {
 		linphone_core_reset_log_collection();
 	} else if ([key isEqual:@"send_logs_button"]) {
-		NSString *message;
-
-		if ([LinphoneManager.instance lpConfigBoolForKey:@"send_logs_include_linphonerc_and_chathistory"]) {
-			message = NSLocalizedString(
-				@"Warning: an email will be created with 3 attachments:\n- Application "
-				@"logs\n- Linphone configuration\n- Chats history.\nThey may contain "
-				@"private informations (MIGHT contain clear-text password!).\nYou can remove one or several "
-				@"of these attachments before sending your email, however there are all "
-				@"important to diagnostize your issue.",
-				nil);
-		} else {
-			message = NSLocalizedString(@"Warning: an email will be created with application " @"logs. It may contain "
-										@"private informations (but no password!).\nThese logs are "
-										@"important to diagnostize your issue.",
-										nil);
+		char *filepath = linphone_core_compress_log_collection(lc);
+		if (filepath == NULL) {
+			LOGE(@"Cannot sent logs: file is NULL");
+			return;
 		}
 
-		DTAlertView *alert =
-			[[DTAlertView alloc] initWithTitle:NSLocalizedString(@"Sending logs", nil) message:message];
-		[alert addCancelButtonWithTitle:NSLocalizedString(@"Cancel", nil) block:nil];
-		[alert addButtonWithTitle:NSLocalizedString(@"I got it, continue", nil)
-							block:^{
-							  [self sendEmailWithDebugAttachments];
-							}];
-		[alert show];
+		NSString *filename = [[NSString stringWithUTF8String:filepath] componentsSeparatedByString:@"/"].lastObject;
+		NSString *mimeType;
+		if ([filename hasSuffix:@".jpg"]) {
+			mimeType = @"image/jpeg";
+		} else if ([filename hasSuffix:@".png"]) {
+			mimeType = @"image/png";
+		} else if ([filename hasSuffix:@".pdf"]) {
+			mimeType = @"application/pdf";
+		} else if ([filename hasSuffix:@".txt"]) {
+			mimeType = @"text/plain";
+		} else if ([filename hasSuffix:@".gz"]) {
+			mimeType = @"application/gzip";
+		} else {
+			LOGE(@"Unknown extension type: %@, cancelling email", filename);
+			return;
+		}
+		[self emailAttachment:[NSData dataWithContentsOfFile:[NSString stringWithUTF8String:filepath]]
+					 mimeType:mimeType
+						 name:filename];
+		ms_free(filepath);
 	}
 }
 
@@ -778,86 +830,45 @@ static UICompositeViewDescription *compositeDescription = nil;
 		[self goToWizard];
 }
 
-#pragma mark - Mail composer for sending logs
-
-- (void)sendEmailWithDebugAttachments {
-	LinphoneCore *lc = [LinphoneManager getLc];
-	NSMutableArray *attachments = [[NSMutableArray alloc] initWithCapacity:3];
-
-	// retrieve linphone logs if available
-	char *filepath = linphone_core_compress_log_collection(lc);
-	if (filepath != NULL) {
-		NSString *filename = [[NSString stringWithUTF8String:filepath] componentsSeparatedByString:@"/"].lastObject;
-		NSString *mimeType = nil;
-		if ([filename hasSuffix:@".txt"]) {
-			mimeType = @"text/plain";
-		} else if ([filename hasSuffix:@".gz"]) {
-			mimeType = @"application/gzip";
-		} else {
-			LOGE(@"Unknown extension type: %@, not attaching logs", filename);
-		}
-
-		if (mimeType != nil) {
-			[attachments addObject:@[ [NSString stringWithUTF8String:filepath], mimeType, filename ]];
-		}
+#pragma mark - Mail composer for send log
+- (void)emailAttachment:(NSData *)attachment mimeType:(NSString *)type name:(NSString *)attachmentName {
+	if (attachmentName == nil || type == nil || attachmentName == nil) {
+		LOGE(@"Trying to email attachment but mandatory field is missing");
+		return;
 	}
 
-	if ([LinphoneManager.instance lpConfigBoolForKey:@"send_logs_include_linphonerc_and_chathistory"]) {
-		// retrieve linphone rc
-		[attachments
-			addObject:@[ [LinphoneManager documentFile:@"linphonerc"], @"text/plain", @"linphone-configuration.rc" ]];
-
-		// retrieve historydb
-		[attachments addObject:@[
-			[LinphoneManager documentFile:@"linphone_chats.db"],
-			@"application/x-sqlite3",
-			@"linphone-chats-history.db"
-		]];
-	}
-
-	[self emailAttachments:attachments];
-	ms_free(filepath);
-}
-- (void)emailAttachments:(NSArray *)attachments {
-	NSString *error = nil;
 #if TARGET_IPHONE_SIMULATOR
-	error =
-		NSLocalizedString(@"Cannot send emails on the Simulator. To test this feature, please use a real device.", nil);
+	UIAlertView *error = [[UIAlertView alloc]
+			initWithTitle:NSLocalizedString(@"Cannot send email", nil)
+				  message:NSLocalizedString(
+							  @"Simulator cannot send emails. To test this feature, please use a real device.", nil)
+				 delegate:nil
+		cancelButtonTitle:NSLocalizedString(@"Continue", nil)
+		otherButtonTitles:nil];
+	[error show];
 #else
-	if ([MFMailComposeViewController canSendMail] == NO) {
-		error = NSLocalizedString(
-			@"Your device is not configured to send emails. Please configure mail application prior to send logs.",
-			nil);
-	}
-#endif
-
-	if (error != nil) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Cannot send email", nil)
-														message:error
-													   delegate:nil
-											  cancelButtonTitle:NSLocalizedString(@"Continue", nil)
-											  otherButtonTitles:nil];
-		[alert show];
-	} else {
+	if ([MFMailComposeViewController canSendMail] == YES) {
 		MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
 		picker.mailComposeDelegate = self;
 
-		[picker setSubject:NSLocalizedString(@"Linphone iOS Logs", nil)];
-		[picker setToRecipients:[NSArray arrayWithObjects:@"linphone-iphone@belledonne-communications.com", nil]];
-		[picker setMessageBody:NSLocalizedString(@"Here are information about an issue I had on my device.\nI was "
-												 @"doing ...\nI expected Linphone to ...\nInstead, I got an "
-												 @"unexpected result: ...",
-												 nil)
-						isHTML:NO];
-		for (NSArray *attachment in attachments) {
-			if ([[NSFileManager defaultManager] fileExistsAtPath:attachment[0]]) {
-				[picker addAttachmentData:[NSData dataWithContentsOfFile:attachment[0]]
-								 mimeType:attachment[1]
-								 fileName:attachment[2]];
-			}
-		}
+		[picker setSubject:NSLocalizedString(@"Linphone Logs", nil)];
+		[picker setToRecipients:[NSArray arrayWithObjects:@"helpdesk@advance2000.com", nil]];
+		[picker setMessageBody:NSLocalizedString(@"Linphone logs", nil) isHTML:NO];
+		[picker addAttachmentData:attachment mimeType:type fileName:attachmentName];
+
 		[self presentViewController:picker animated:true completion:nil];
+	} else {
+		UIAlertView *error = [[UIAlertView alloc]
+				initWithTitle:NSLocalizedString(@"Cannot send email", nil)
+					  message:NSLocalizedString(@"Your device is not configured to send emails. Please configure mail "
+												@"application prior to send logs.",
+												nil)
+					 delegate:nil
+			cancelButtonTitle:NSLocalizedString(@"Continue", nil)
+			otherButtonTitles:nil];
+		[error show];
 	}
+#endif
 }
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller

@@ -9,6 +9,8 @@
 			<string>Codecs</string>
 			<key>Type</key>
 			<string>PSGroupSpecifier</string>
+			<key>Key</key>
+			<string>codecs_menu_added</string>
 		</dict>
 		<dict>
 			<key>DefaultValue</key>

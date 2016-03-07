@@ -151,7 +151,10 @@ static void sync_address_book(ABAddressBookRef addressBook, CFDictionaryRef info
 
 	LinphoneAddress *linphoneAddress =
 		linphone_address_new([address cStringUsingEncoding:[NSString defaultCStringEncoding]]);
-	NSString *username = [NSString stringWithUTF8String:linphone_address_get_username(linphoneAddress)];
+    
+	NSString *username = @"";
+    if (linphoneAddress)
+        username=[NSString stringWithUTF8String:linphone_address_get_username(linphoneAddress)];
 
 	if (([username rangeOfString:@"@"].length > 0) &&
 		([[LinphoneManager instance] lpConfigBoolForKey:@"show_contacts_emails_preference"] == true)) {
@@ -162,7 +165,8 @@ static void sync_address_book(ABAddressBookRef addressBook, CFDictionaryRef info
 	} else {
 		[tableController addSipField:address];
 	}
-	linphone_address_destroy(linphoneAddress);
+    if (linphoneAddress)
+        linphone_address_destroy(linphoneAddress);
 
 	[self enableEdit:FALSE];
 	[[tableController tableView] reloadData];

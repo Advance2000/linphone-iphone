@@ -25,7 +25,7 @@
 	if ([tester tryFindingTappableViewWithAccessibilityLabel:@"Back" error:nil]) {
 		[self goBackFromChat];
 	}
-	[tester tapViewWithAccessibilityLabel:@"Chat"];
+	[tester tapViewWithAccessibilityLabel:@"VMail"];
 	[self removeAllRooms];
 }
 
@@ -171,7 +171,7 @@
 	}
 
 	NSTimeInterval before = [[NSDate date] timeIntervalSince1970];
-	[tester tapViewWithAccessibilityLabel:@"Chat"];
+	[tester tapViewWithAccessibilityLabel:@"VMail"];
 	NSTimeInterval after = [[NSDate date] timeIntervalSince1970];
 
 	XCTAssertEqual([[self findTableView:@"Chat list"] numberOfRowsInSection:0], 100);
@@ -275,9 +275,7 @@
 	for (int i = 0; i < 3; i++) {
 		// messages order is not known: if upload bitrate is huge, first image can be uploaded before last started
 		while (![tester tryFindingTappableViewWithAccessibilityLabel:@"Download" error:nil]) {
-			[tester scrollViewWithAccessibilityIdentifier:@"ChatRoom list"
-							   byFractionOfSizeHorizontal:0.f
-												 vertical:-.1f];
+			[tester scrollViewWithAccessibilityIdentifier:@"Chat list" byFractionOfSizeHorizontal:0.f vertical:-.1f];
 		}
 		[tester waitForViewWithAccessibilityLabel:@"Download"];
 		[tester tapViewWithAccessibilityLabel:@"Download"];
@@ -319,13 +317,6 @@
 	[self uploadImageWithQuality:@"Minimum"];
 	[tester tapViewWithAccessibilityLabel:@"Cancel transfer"];
 	ASSERT_EQ([[[LinphoneManager instance] fileTransferDelegates] count], 0);
-}
-
-- (void)testTransferDestroyRoomWhileUploading {
-	[self startChatWith:[self me]];
-	[self uploadImageWithQuality:@"Maximum"];
-	[self goBackFromChat];
-	[self removeAllRooms];
 }
 
 - (void)testTransferDownloadImage {

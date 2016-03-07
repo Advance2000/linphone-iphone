@@ -194,7 +194,7 @@
 			message = NSLocalizedString(@"Network down", nil);
 	} else {
 		state = linphone_proxy_config_get_state(config);
-
+        
 		switch (state) {
 		case LinphoneRegistrationOk:
 			message = NSLocalizedString(@"Registered", nil);
