@@ -21,7 +21,7 @@
 #import "LinphoneManager.h"
 #include "linphone/lpconfig.h"
 #include "LinphoneIOSVersion.h"
-
+//
 @implementation AboutViewController
 
 @synthesize linphoneCoreVersionLabel;
